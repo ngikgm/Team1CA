@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="w3.css">
+<title>Master Course</title>
+</head>
+<body>
+	<table class="w3-container">
+		<tr th:each="course:${courses}">
+			<td th:text=${course.courseId}>Id</td>
+			<td th:text=${course.courseName}>Name</td>
+			<td th:text=${course.unit}>Unit</td>
+		</tr>
+	</table>
+</body>
+</html>

@@ -1,11 +1,9 @@
 package Team1CA.model;
 
-import java.util.List;
-
+import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
 
+@Entity
 public class Course {
 
 	@Id
@@ -13,7 +11,41 @@ public class Course {
 	private String courseName;
 	private int unit;
 	
-	//students can join multiple course?
-	@ManyToMany
-	private List<Student> student_studentId;
+	public Course() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	public Course(int courseId, String courseName, int unit) {
+		super();
+		this.courseId = courseId;
+		this.courseName = courseName;
+		this.unit = unit;
+	}
+	public int getCourseId() {
+		return courseId;
+	}
+	public void setCourseId(int courseId) {
+		this.courseId = courseId;
+	}
+	public String getCourseName() {
+		return courseName;
+	}
+	public void setCourseName(String courseName) {
+		this.courseName = courseName;
+	}
+	public int getUnit() {
+		return unit;
+	}
+	public void setUnit(int unit) {
+		this.unit = unit;
+	}
+	
+	@Override
+	public String toString() {
+		return "Course [courseId=" + courseId + ", courseName=" + courseName + ", unit=" + unit + "]";
+	}
+	
+//	//students can join multiple course?
+//	@ManyToMany
+//	private List<Student> student_studentId;
 }
